@@ -43,6 +43,13 @@ def main():
             if obj.collisions(playr):
                 print("Game over!")
                 raise SystemExit()
+            
+        for aster in asteroids:
+            for bullet in shots:
+                if bullet.collisions(aster):
+                    bullet.kill()
+                    aster.split()
+
 
         screen.fill("black")
 
